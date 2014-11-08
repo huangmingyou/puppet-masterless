@@ -1,0 +1,9 @@
+# Update for your Foreman and Puppet master hostname(s)
+:url: "http://foreman.example.com:3000"
+
+# Advanced settings
+:puppetdir: "/var/lib/puppet"
+:puppetuser: "puppet"
+:facts: true
+:timeout: 10
+:threads: null

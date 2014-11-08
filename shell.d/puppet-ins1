@@ -1,0 +1,15 @@
+#!/bin/bash
+# 运行运维部门的puppet代码
+#sleep ${1:-$(($RANDOM%30))}
+export RSYNC_PASSWORD=youpasswd
+WD="/opt/puppet-ml/instances/ins1"
+FN="ins1-puppet.tar.xz.gpg"
+mkdir -p $WD
+[ ${#WD} -gt 20 ]&&rm ${WD}/* -rf
+
+
+rsync --timeout=10 --contimeout=15 -avz --delete  puppet@www.example.com::newpuppet/${FN} /tmp/${FN}
+gpg -d /tmp/${FN} |tar xf -  --lzma  -C ${WD}/
+
+puppet apply --config /opt/puppet-ml/etc/puppet.conf --modulepath=${WD}/modules ${WD}/manifests
+
