@@ -9,6 +9,8 @@ mkdir -p $WD
 
 
 rsync --timeout=10 --contimeout=15 -avz --delete  puppet@www.example.com::newpuppet/${FN} /tmp/${FN}
+# 不能验证签名，退出
+gpg --verify  /tmp/${FN}||exit 0
 gpg -d /tmp/${FN} |tar xf -  --lzma  -C ${WD}/
 
 puppet apply --config /opt/puppet-ml/etc/puppet.conf --modulepath=${WD}/modules ${WD}/manifests
