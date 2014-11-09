@@ -69,3 +69,11 @@ puppet masterless 是一种不使用puppet master运行puppet的方法，直接�
 
 pushfacts 脚本用来发送facts到foreman,可以定制需要发送的facts,也可以自己定义facter脚本，把脚本放到lib/facts.d目录下。
 foreman.rb 用来发送puppet执行后的报告。
+
+安装
+===
+
+git clone 本项目到合适的目录,拷贝到/opt/puppet-ml/; 定制shell.d里面的脚本下载puppet代码和执行puppet代码，
+设置一个crontab脚本定时执行。
+
+在foreman.yaml和pushfacts以及foreman.rb里面设置foreman server的相关配置。
