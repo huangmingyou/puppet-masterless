@@ -57,7 +57,7 @@ Installation
 说明
 ====
 
-    puppet masterless 是一种不使用puppet master运行puppet的方法，直接下载puppet 代码到服务器运行，把运行结果直接发送到foreman。
+puppet masterless 是一种不使用puppet master运行puppet的方法，直接下载puppet 代码到服务器运行，把运行结果直接发送到foreman。
 也可以直接发送facts到foreman , 并且把foreman 作为puppet enc 的来源。
 
 运行机制
