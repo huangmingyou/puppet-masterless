@@ -51,6 +51,4 @@ Installation
 
 5. Change the shell.d/puppet-ins1 for you self
 6. Set a Crontab job run shell.d/puppet-ins1
-7. You can pull a foreman server docker image from hub.docker.com ,name with huangmingyou/foreman
-
-this is a pre configed foreman server.
+7. You can pull a foreman server docker image from hub.docker.com ,name with huangmingyou/foreman , this is a pre configed foreman server.
