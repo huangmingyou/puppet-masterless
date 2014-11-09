@@ -64,6 +64,7 @@ Installation
 ========
 
 使用一个crontab job定时运行 shell.d里面的脚本，该脚本负责下载和验证(gpg 签名验证)puppet代码到本地来执行。
+
         $ puppet apply --config /opt/puppet-ml/etc/puppet.conf --modulepath=${WD}/modules ${WD}/manifests
 
 pushfacts 脚本用来发送facts到foreman,可以定制需要发送的facts,也可以自己定义facter脚本，把脚本放到lib/facts.d目录下。
