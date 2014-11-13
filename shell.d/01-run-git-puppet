@@ -1,0 +1,28 @@
+#!/bin/bash
+# 
+# ssh get puppet code and run it
+sleep ${1:-$(($RANDOM%60))}
+export GIT_SSH="/opt/puppet-ml/lib/ssh.git"
+giturl="hmy@git.example.com:/home/hmy/puppet.git"
+WD="/opt/puppet-ml/instances/ins1"
+
+
+
+
+
+[ -d $WD ]||git init ${WD}
+cd ${WD}
+git rev-parse --is-inside-work-tree||git init ${WD}
+git fetch --tags --progress ${giturl} +refs/heads/*:refs/remotes/origin/*
+git config core.sparsecheckout 
+git tag -v release 2>/dev/null
+[ $? -eq 0 ]||exit 0
+cv=$(git rev-parse refs/tags/release)
+git checkout -f $cv
+
+
+
+
+[ -d ${WD}/manifests ]&&puppet apply --config /opt/puppet-ml/etc/puppet.conf --modulepath=${WD}/modules ${WD}/manifests
+exit 0
+

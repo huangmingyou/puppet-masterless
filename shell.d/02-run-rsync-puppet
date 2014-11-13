@@ -1,5 +1,5 @@
 #!/bin/bash
-# 运行运维部门的puppet代码
+# rsync get code and run it
 #sleep ${1:-$(($RANDOM%30))}
 export RSYNC_PASSWORD=youpasswd
 export PATH="/bin:/usr/bin:/usr/sbin:/sbin"
