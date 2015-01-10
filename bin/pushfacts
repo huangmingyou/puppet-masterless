@@ -1,7 +1,7 @@
 #!/bin/bash
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 hn=$(hostname -f)
-fv=$(facter -j  --external-dir /opt/puppet-ml/lib/facts.d ipaddress macaddress architechture fqdn operatingsystem lsbdistdescription operatingsystemrelease boardmanufacturer productname serialnumber memorysize processorcount timezone uptime virtual hardwareisa swapsize swapfree memoryfree )
+fv=$(facter -j  --external-dir /opt/puppet/lib/facts.d ipaddress macaddress architechture fqdn operatingsystem lsbdistdescription operatingsystemrelease boardmanufacturer productname serialnumber memorysize processorcount timezone uptime virtual hardwareisa swapsize swapfree memoryfree )
 df="/tmp/facts.data"
 cat <<EOF  >$df
 {"facts":$fv,"name":"$hn","certname":"$hn"}

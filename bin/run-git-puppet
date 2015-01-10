@@ -4,7 +4,7 @@
 sleep ${1:-$(($RANDOM%60))}
 export GIT_SSH="/opt/puppet-ml/lib/ssh.git"
 giturl="hmy@git.example.com:/home/hmy/puppet.git"
-WD="/opt/puppet-ml/instances/ins1"
+WD="/opt/puppet/git"
 
 
 

@@ -23,7 +23,7 @@ rescue LoadError
   end
 end
 
-$settings_file = "/opt/puppet-ml/etc/foreman.yaml"
+$settings_file = "/opt/puppet/etc/foreman.yaml"
 
 SETTINGS = YAML.load_file($settings_file)
 
